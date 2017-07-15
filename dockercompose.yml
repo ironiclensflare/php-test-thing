@@ -1,0 +1,18 @@
+version: "2"
+services:
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: php
+      MYSQL_DATABASE: php
+      MYSQL_USER: php
+      MYSQL_PASSWORD: php
+
+  php:
+    image: ironiclensflare/php-thing
+    environment:
+      APP_ENV: dev
+    ports:
+      - 8080:80
+    volumes:
+      - $PWD/php:/var/www/html/
